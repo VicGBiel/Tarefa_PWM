@@ -14,10 +14,11 @@ void pwm_cycle(uint gpio);
 
 int main() {
     stdio_init_all(); // Inicializa a entrada e saída padrão
+    gpio_set_dir(LED_RGB_PIN, true); //Configura o led como saída
     pwm_setup();
 
     while (true) {
-        pwm_cycle(LED_RGB_PIN);
+        pwm_cycle(SERVO_PIN);
     }
 }
 
